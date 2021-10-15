@@ -40,15 +40,6 @@ resource "sakuracloud_server" "test" {
   }
 }
 
-resource "sakuracloud_dns" "subdomain" {
-  zone = "histudy.jp"
-  record {
-    name  = "test"
-    type  = "A"
-    value = sakuracloud_server.test.ip_address
-  }
-}
-
 output "ip_address" {
   value = sakuracloud_server.test.ip_address
 }
